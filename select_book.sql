@@ -11,6 +11,16 @@ FROM book;
 -- 도서 테이블에 있는 모든 출판사 검색
 SELECT DISTINCT publisher FROM book; -- DISTINCT 중복 제거
 
+-- 책번호가 5번인 도서
+SELECT *
+FROM book
+WHERE bookid = 5;   -- = 같다
+
+-- 책번호가 5번이 아닌 도서
+SELECT *
+FROM book
+WHERE bookid <> 5;  -- <> 같지않다
+
 -- 가격이 20000원 미만인 도서 검색
 SELECT *
 FROM book
