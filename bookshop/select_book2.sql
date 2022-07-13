@@ -23,3 +23,15 @@ SELECT custid, COUNT(*) 도서수량, SUM(saleprice) 총액
 FROM orders
 GROUP BY custid; -- 그룹으로 묶어야 할때는 GROUP BY를 사용한다
 
+-- 가격이 8000원 이상인 도서를 구매한 고객에 대하여 고객별 주문 도서의 총 수량을 구하시오
+-- 단 2권 이상 구매한 고객만 구하시오
+-- HAVING 절은 GROUP BY 질의 결과 나타내는 그룹을 제한하는 역할을 한다.
+SELECT custid, COUNT(*)
+FROM orders
+WHERE saleprice >= 8000
+GROUP BY custid
+HAVING count(*) >= 2;
+
+SELECT * FROM book;
+SELECT * FROM customer;
+SELECT * FROM orders;
